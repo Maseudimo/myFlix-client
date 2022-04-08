@@ -943,34 +943,30 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactDom = require("react-dom");
+var _reactDom = require("react-dom"); // Import statement to indicate that you need to bundle `./index.scss`
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
-// Import statement to indicate that you need to bundle `./index.scss`
-var _indexScss = require("./index.scss");
-// Main component (will eventually use all the others)
+var _indexScss = require("./index.scss"); // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "my-flix",
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 11
+                lineNumber: 8
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
                 __source: {
                     fileName: "src/index.jsx",
-                    lineNumber: 12
+                    lineNumber: 9
                 },
                 __self: this,
                 children: "Good morning"
             })
         }));
     }
-}
-// Finds the root of your app
-const container = document.getElementsByClassName('app-container')[0];
-// Tells React to render your app in the root DOM element
+} // Finds the root of your app
+const container = document.getElementsByClassName('app-container')[0]; // Tells React to render your app in the root DOM element
 _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElement(MyFlixApplication), container);
 
   $parcel$ReactRefreshHelpers$b058.postlude(module);
