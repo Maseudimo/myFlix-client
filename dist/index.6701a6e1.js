@@ -25227,7 +25227,7 @@ class MainView extends _reactDefault.default.Component {
                     Description: 'desc1...',
                     Genre: 'Sci-Fi',
                     Director: 'Christopher Nolan',
-                    ImagePath: '...'
+                    ImagePath: 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg'
                 },
                 {
                     _id: 2,
@@ -25320,14 +25320,18 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MovieCard extends _reactDefault.default.Component {
     render() {
+        const { movie , onMovieClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "movie-card",
+            onClick: ()=>{
+                onMovieClick(movie);
+            },
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 4
+                lineNumber: 8
             },
             __self: this,
-            children: "some title"
+            children: movie.Title
         }));
     }
 }
