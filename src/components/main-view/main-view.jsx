@@ -29,6 +29,7 @@ import { MovieView } from '../movie-view/movie-view';
      });
     }
 
+      /*When a movie is clicked, this function is invoked and updates the state of the `selectedMovie` *property to that movie*/
     setSelectedMovie(movie) {
         this.setState({
             selectedMovie: movie
@@ -41,6 +42,8 @@ import { MovieView } from '../movie-view/movie-view';
           registration,
       });
   }
+
+    /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
   onLoggedIn(user) {
     this.setState({
         user
