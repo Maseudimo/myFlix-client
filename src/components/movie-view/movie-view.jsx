@@ -5,7 +5,22 @@ import './movie-view.scss'
 
 export class MovieView extends React.Component {
 
- 
+  
+  
+  keypressCallback(event) {
+    alert(event.key);
+  }
+  componentDidMount() {
+    document.addEventListener("keypress", this.keypressCallback);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keypress", this.keypressCallback);
+  }
+
+
+
+
     render() {
 
         const { movie, onBackClick } = this.props;
@@ -24,10 +39,35 @@ export class MovieView extends React.Component {
               <span className="label">Description: </span>
               <span className="value">{movie.Description}</span>
             </div>
-    
-           </div>
+            <button
+              onClick={() => {
+                onBackClick(null);
+              }}
+            >
+              Back
+            </button>
+          </div>
         );
       }
     }
+    MovieView.propTypes = {
+      movie: PropTypes.shape({
+        Title: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
+        ImagePath: PropTypes.string.isRequired,
+        Genre: PropTypes.shape({
+          Name: PropTypes.string.isRequired,
+          Description: PropTypes.string.isRequired,
+        }),
+        Director: PropTypes.shape({
+          Name: PropTypes.string.isRequired,
+          Bio: PropTypes.string.isRequired,
+          Birth: PropTypes.number.isRequired,
+          Death: PropTypes.number,
+        }),
+      }).isRequired,
+    };
+    
+
 
 export default MovieView;

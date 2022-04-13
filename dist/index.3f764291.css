@@ -140,11 +140,7 @@ movie-view {
 movie-title {
   width: 100%;
 }
-.main-view {
-  background: #5c1818;
-  width: 100%;
-  display: inline-block;
-}
+
 :root {
   --background-color: #ECF0F1;
   --input-color: #F9F871;
