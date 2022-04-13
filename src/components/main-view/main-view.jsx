@@ -1,20 +1,20 @@
 import React from 'react';
 import axios from 'axios';
 import './main-view.scss';
-//import propTypes from 'prop-types';
 
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
-  export class MainView extends React.Component {
+ class MainView extends React.Component {
     constructor() {
         super();
         this.state = {
             movies: [],
-            selectedMovie: null
-        }
+            selectedMovie: null,
+            user: null,
+        };
     }
 
     componentDidMount(){
@@ -52,7 +52,9 @@ import { MovieView } from '../movie-view/movie-view';
 
 
     render() {
-        const { movies, selectedMovie } = this.state;
+        const { movies, selectedMovie, regsiter, user } = this.state;
+
+        
 
 
         if (movies.length === 0) return <div className="main-view" />;
