@@ -26759,15 +26759,23 @@ class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie , onMovieClick  } = this.props; // shortend for const movie = this.props.movie, props are to receive data in form of an object
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            onClick: ()=>onMovieClick(movie)
-            ,
-            className: "movie-card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 11
             },
             __self: this,
-            children: movie.Title
+            children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
+                href: "#",
+                onClick: ()=>onMovieClick(movie)
+                ,
+                className: "movie-card",
+                __source: {
+                    fileName: "src/components/movie-card/movie-card.jsx",
+                    lineNumber: 12
+                },
+                __self: this,
+                children: movie.Title
+            })
         }));
     }
 }
@@ -27863,64 +27871,167 @@ function LoginView(props) {
         console.log(username, password);
         /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("form", {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        className: "main",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
             lineNumber: 18
         },
         __self: this,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+            /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                type: "checkbox",
+                id: "chk",
+                "aria-hidden": "true",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 19
+                    lineNumber: 20
                 },
-                __self: this,
-                children: [
-                    "Username:",
-                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                        type: "text",
-                        value: username,
-                        onChange: (e)=>setUsername(e.target.value)
-                        ,
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 21
-                        },
-                        __self: this
-                    })
-                ]
+                __self: this
             }),
-            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+            /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                className: "signup",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 23
+                    lineNumber: 21
                 },
                 __self: this,
-                children: [
-                    "Password:",
-                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                        type: "password",
-                        value: password,
-                        onChange: (e)=>setPassword(e.target.value)
-                        ,
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 25
-                        },
-                        __self: this
-                    })
-                ]
+                children: /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                    __source: {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 22
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                            htmlFor: "chk",
+                            "aria-hidden": "true",
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 23
+                            },
+                            __self: this,
+                            children: "MyFlix"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                            type: "text",
+                            name: "txt",
+                            placeholder: "User name",
+                            value: username,
+                            onChange: (e)=>setUsername(e.target.value)
+                            ,
+                            required: "",
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 24
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                            type: "password",
+                            name: "pswd",
+                            placeholder: "Password",
+                            value: password,
+                            onChange: (e)=>setPassword(e.target.value)
+                            ,
+                            required: "",
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 25
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                            type: "submit",
+                            onClick: handleSubmit,
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 26
+                            },
+                            __self: this,
+                            children: "Login"
+                        })
+                    ]
+                })
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                type: "submit",
-                onClick: handleSubmit,
+            /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                className: "login",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 27
+                    lineNumber: 29
                 },
                 __self: this,
-                children: "Submit"
+                children: /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                    __source: {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 30
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                            htmlFor: "chk",
+                            "aria-hidden": "true",
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 31
+                            },
+                            __self: this,
+                            children: "Sign up"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                            type: "text",
+                            name: "txt",
+                            placeholder: "User name",
+                            value: username,
+                            onChange: (e)=>setUsername(e.target.value)
+                            ,
+                            required: "",
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 32
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                            type: "email",
+                            name: "email",
+                            placeholder: "Email",
+                            value: email,
+                            onChange: (e)=>setEmail(e.target.value)
+                            ,
+                            required: "",
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 33
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                            type: "password",
+                            name: "pswd",
+                            placeholder: "Password",
+                            value: password,
+                            onChange: (e)=>setPassword(e.target.value)
+                            ,
+                            required: "",
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 34
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                            type: "submit",
+                            onClick: handleSubmit,
+                            __source: {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 35
+                            },
+                            __self: this,
+                            children: "Sign up"
+                        })
+                    ]
+                })
             })
         ]
     }));

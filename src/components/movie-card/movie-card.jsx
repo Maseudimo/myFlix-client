@@ -7,7 +7,8 @@ export class MovieCard extends React.Component {
     render() {
     const { movie, onMovieClick } = this.props; // shortend for const movie = this.props.movie, props are to receive data in form of an object
     return (
-        <div onClick={() => onMovieClick(movie)} className="movie-card">{movie.Title}</div>
+        <div>
+           <a href="#" onClick={() => onMovieClick(movie)} className="movie-card">{movie.Title}</a></div>
     );
   }
  } 
