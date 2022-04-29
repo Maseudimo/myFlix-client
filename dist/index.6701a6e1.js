@@ -25331,7 +25331,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../login-view/login-view":"054li","../registration-view/registration-view":"aP2YV","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"kXR9K","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fSRXz","react-bootstrap":"h2YVd","./main-view.scss":"jyMAr","react-router-dom":"cpyQW"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../login-view/login-view":"054li","../registration-view/registration-view":"aP2YV","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"kXR9K","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fSRXz","./main-view.scss":"jyMAr","react-bootstrap":"h2YVd","react-router-dom":"cpyQW"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -27159,7 +27159,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./login-view.scss":"lS4BK","@parcel/transformer-js/src/esmodule-helpers.js":"kXR9K","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fSRXz","axios":"iYoWk","react-bootstrap":"h2YVd","react-router-dom":"cpyQW"}],"1tgq3":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./login-view.scss":"lS4BK","@parcel/transformer-js/src/esmodule-helpers.js":"kXR9K","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fSRXz","react-bootstrap":"h2YVd","axios":"iYoWk","react-router-dom":"cpyQW"}],"1tgq3":[function(require,module,exports) {
 var ReactIs = require('react-is');
 // By explicitly using `prop-types` you are opting into new development behavior.
 // http://fb.me/prop-types-in-prod
