@@ -29,7 +29,7 @@ import "./main-view.scss";
   
     getMovies(token) {
       axios
-        .get("https://my-flix-api-2022.herokuapp.com/movies", {
+        .get("https://mehos-myflix-app.herokuapp.com/movies", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {

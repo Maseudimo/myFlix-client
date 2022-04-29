@@ -25084,7 +25084,7 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     getMovies(token) {
-        _axiosDefault.default.get("https://my-flix-api-2022.herokuapp.com/movies", {
+        _axiosDefault.default.get("https://mehos-myflix-app.herokuapp.com/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
