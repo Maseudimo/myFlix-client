@@ -1,24 +1,36 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./movie-card.scss";
- 
+
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button, Card, Container } from "react-bootstrap";
+import './movie-card.scss'
+import { Link } from "react-router-dom";
+
 export class MovieCard extends React.Component {
   
-    render() {
-    const { movie, onMovieClick } = this.props; // shortend for const movie = this.props.movie, props are to receive data in form of an object
+  render() {
+    const { movie } = this.props;
     return (
-        <div>
-           <a href="#" onClick={() => onMovieClick(movie)} className="movie-card">{movie.Title}</a></div>
-    );
-  }
- } 
- 
-MovieCard.propTypes = {
-    movie: PropTypes.shape({
-      Title: PropTypes.string.isRequired,
       
-    }).isRequired,
-    onMovieClick: PropTypes.func.isRequired,
-  };
-  
-  export default MovieCard;
+      <Card id="movie-card">
+      <Card.Img id="movie-image" variant="top" src={movie.ImagePath} />
+      <Card.Body>
+        <Card.Title id="movie-title">{movie.Title}</Card.Title>
+        <Card.Text id="movie-genre">{movie.Genre.Name}</Card.Text>
+        <Link to={`/movies/${movie._id}`}>
+            <Button variant="link">Open</Button>
+          </Link>
+      </Card.Body>
+    </Card>
+         )}
+        };
+
+
+        MovieCard.propTypes = {
+          movie: PropTypes.shape({
+            Title: PropTypes.string.isRequired,
+            Description: PropTypes.string.isRequired,
+          }).isRequired,
+         
+        };
+        
+        

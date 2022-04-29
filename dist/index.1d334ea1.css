@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 300%;
@@ -64,3 +64,42 @@ button {
   line-height: 1.8rem;
   cursor: pointer;
 }
+
+
+:root {
+  --background-color: #ECF0F1;
+  --input-color: #F9F871;
+  --text-color: #4E8397;
+  --primary-color: #52b788;
+  --link-color: #845EC2;
+  --visited-link-color: #D65DB1;
+  --active-link-color: #FF6F91;
+  --button-color: #FF9671;
+  --header-color: #006d77;
+  --main-font-size: 14px;
+  --padding: 3rem;
+  --margin: 5rem;
+}
+
+.movie-poster img {
+  width: 500px;
+}
+
+.movie-description {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.label {
+  position: center;
+  border: none;
+  width: 100px;
+  background: #dfdfdf;
+  color: #1c2c38;
+  font-size: 2.2rem;
+  line-height: 1.8rem;
+}
+
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.1d334ea1.css.map */
