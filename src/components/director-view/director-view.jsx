@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./director-view.scss";
-import { Container, Card, Button, Row, Link } from "react-bootstrap";
+import { Container, Card,  } from "react-bootstrap";
 
 
 

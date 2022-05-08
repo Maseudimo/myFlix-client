@@ -3,7 +3,6 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { Container, Card, Row, Col, Form, Button } from "react-bootstrap";
 import { MovieCard } from "../movie-card/movie-card";
-import { Button as ButtonSpecial } from "react-bootstrap";
 
 export class ProfileView extends React.Component {
   constructor() {
@@ -14,8 +13,7 @@ export class ProfileView extends React.Component {
       Password: null,
       Email: null,
       Birthday: null,
-      FavoriteMovies: [],
-      changeMarker: false,
+      FavoriteMovies: []
     };
   }
 
@@ -45,7 +43,7 @@ export class ProfileView extends React.Component {
           Password: response.data.Password,
           Email: response.data.Email,
           Birthday: response.data.Birthday,
-          FavoriteMovies: response.data.FavoriteMovies,
+          FavoriteMovies: response.data.FavoriteMovies
         });
       })
       .catch(function (error) {

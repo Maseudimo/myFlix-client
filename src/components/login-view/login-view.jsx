@@ -1,37 +1,37 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
-import axios from 'axios';
+import axios from "axios";
 import { Link } from "react-router-dom";
-import './login-view.scss';
+import "./login-view.scss";
 
 
 export function LoginView(props) {
-  const [ username, setUsername ] = useState('');
-  const [ password, setPassword ] = useState('');
+  const [ username, setUsername ] = useState("");
+  const [ password, setPassword ] = useState("");
  
   //validation declarations 
-  const [ usernameErr, setUsernameErr ] = useState('');
-  const [ passwordErr, setPasswordErr ] = useState('');
+  const [ usernameErr, setUsernameErr ] = useState("");
+  const [ passwordErr, setPasswordErr ] = useState("");
 
   const validate = () => {
       let isReq = true;
       
       if(!username) {
-          setUsernameErr('Username Required');
+          setUsernameErr("Username Required");
           isReq = false;
 
       } else if(username.length < 2) {
-          setUsernameErr('Username must be at least 2 characters long');
+          setUsernameErr("Username must be at least 2 characters long");
           isReq = false;
       }
       
       if(!password) {
-          setPasswordErr('Password Required');
+          setPasswordErr("Password Required");
           isReq = false;
 
       } else if(password.length < 6){
-          setPasswordErr('Password must be at least 6 characters long');
+          setPasswordErr("Password must be at least 6 characters long");
           isReq = false;
       }
       return isReq;
@@ -45,7 +45,7 @@ export function LoginView(props) {
          
           /* Send a request to the server for authentication */
       /* then call this.props.onLoggedIn(username) */
-            axios.post('https://mehos-myflix-app.herokuapp.com/login', {
+            axios.post("https://mehos-myflix-app.herokuapp.com/login", {
                 Username: username,
                 Password: password
             })
@@ -99,7 +99,7 @@ export function LoginView(props) {
               <br></br>
               <br></br>
               <p>
-                Don't have an account?
+                Dont have an account?
                 <span>
                   <Link to={"/register"}>
                     <Button

@@ -1,16 +1,18 @@
 import React from "react";
 import axios from "axios";
 import { Row, Col } from "react-bootstrap";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Link, } from "react-router-dom";
 import { LoginView } from "../login-view/login-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-import { DirectorView } from '../director-view/director-view';
-import { GenreView } from '../genre-view/genre-view';
-import { ProfileView } from '../profile-view/profile-view';
+import { DirectorView } from "../director-view/director-view";
+import { GenreView } from "../genre-view/genre-view";
+import { ProfileView } from "../profile-view/profile-view";
 //import { Navbar} from '../navbar-view/navbar-view';
 //import {UserUpdate} from '../profile-view/user-update'
 import { RegistrationView } from "../registration-view/registration-view";
+import { Button } from "react-bootstrap";
+
 
 import "./main-view.scss";
 
@@ -45,10 +47,10 @@ import "./main-view.scss";
   
     // When token is present (user is logged in), get list of movies
     componentDidMount() {
-      let accessToken = localStorage.getItem('token');
+      let accessToken = localStorage.getItem("token");
       if (accessToken !== null) {
         this.setState({
-          user: localStorage.getItem('user'),
+          user: localStorage.getItem("user"),
         });
         this.getMovies(accessToken)
       }
@@ -61,9 +63,10 @@ import "./main-view.scss";
         user: authData.user.username,
       });
   
-      localStorage.setItem('token', authData.token);
-      localStorage.setItem('user', authData.user.username);
-      this.getMovies(authData.token);
+      localStorage.setItem("token", authData.token);
+      localStorage.setItem("user", authData.user.username);
+     // this.getMovies(authData.token);
+     location.reload();
     }
   
     onLoggedOut() {
@@ -77,8 +80,12 @@ import "./main-view.scss";
   
       render() {
 
+
         const { movies, user } = this.state;
         return (
+
+          
+
           <Router>
            
     
@@ -90,14 +97,18 @@ import "./main-view.scss";
           </Col>
 
           if(movies.length===0)return <div className="main-view"/>
+          console.log(user)
 
-          return movies.map(m=>(
+          return <>  
+          
+        { movies.map(m=>( 
           <Col md={3} key={m._id}>
             <MovieCard movie={m}/>
           </Col>
-          )) 
+          ))} 
+          </>
         }}/>
-
+        
         <Route path="/register" render={()=>{
           if(user) return <Redirect to="/"/>
           return <Col lg={8} md={8}>
@@ -132,7 +143,7 @@ import "./main-view.scss";
 
 <Route
   path="/directors/:name"
-  render={({ match, history }) => {
+  render={({ match }) => {
     if (!user) {
       return (
         <Col>
@@ -175,18 +186,7 @@ import "./main-view.scss";
             }}
           />
 
-<Route path={`/user-update/${user}`} render={({match, history})=>{   
-  if(!user) return <Col>
-  <LoginView
-  onLoggedIn={user => this.onLoggedIn(user)}/>
-  </Col>
-  if (movies.length === 0) return <div className="main-view" />;
 
-      if(!user) return <Redirect to="/"/>
-      return <Col>
-    <UserUpdate user={user} onBackClick={()=> history.goBack()}/>
-    </Col>
-    }}/>
 
 
 

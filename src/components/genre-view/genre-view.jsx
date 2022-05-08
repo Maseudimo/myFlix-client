@@ -12,6 +12,9 @@ export class GenreView extends React.Component {
       <Card>
 
         <Card.Body>
+        <Card.Title>
+         Genre
+        </Card.Title>
         <Container className="genre-view">
 
         <Col className="d-sm-flex justify-content-between justify-content-lg-start">
