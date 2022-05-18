@@ -1,23 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainView from './components/main-view/main-view';
+import { devToolsEnhancer } from 'redux-devtools-extension';
+import { Container } from 'react-bootstrap';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import moviesApp from  './reducers/reducers';
+import MainView from  './components/main-view/main-view';
+import  './index.scss';
 
-// Import statement to indicate that you need to bundle `./index.scss`
-import './index.scss';
+const store = createStore(moviesApp, devToolsEnhancer());
 
-// Main component (will eventually use all the others)
-class MyFlixApplication extends React.Component {
+// Main component
+class MyFlixApplication extends React.PureComponent {
   render() {
     return (
-     
-      <MainView />
-
+      <Provider store={store}>
+        <Container>
+          <MainView />
+        </Container>
+      </Provider>
     );
   }
 }
 
-// Finds the root of your app
+// Find the root of our app
 const container = document.getElementsByClassName('app-container')[0];
 
-// Tells React to render your app in the root DOM element
+// Tell React to render our app in the root DOM element
 ReactDOM.render(React.createElement(MyFlixApplication), container);
+
